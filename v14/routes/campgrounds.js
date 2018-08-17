@@ -4,7 +4,7 @@
    var Campground = require('../models/campground');
    var Comment    = require('../models/comment');
    var middleware = require('../middleware');
-   var NodeGeocoder = require('node-geocoder');
+  
    
    var options = {
        provider: 'google',
@@ -13,7 +13,7 @@
        formatter: null
    };
    
-   var geocoder = NodeGeocoder(options);
+   
    
     router.get("/", function(req, res){
         //eval(require('locus'));

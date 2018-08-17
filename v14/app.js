@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 
 var express = require("express"),
     app = express(),
@@ -18,7 +18,7 @@ var commentRoutes     = require('./routes/comments'),
     campgroundRoutes  = require('./routes/campgrounds'),
     indexRoutes       = require('./routes/index');
     
-    var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v15";
+    var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v14";
     mongoose.connect(process.env.DATABASEURL);
     mongoose.connect(url);
     console.log(process.env.DATABASEURL);
