@@ -96,7 +96,8 @@ router.post("/", middleware.isLoggedIn, upload.single('image'), function (req, r
           req.flash('failure', err.message);
           return res.redirect('back');
         }
-        res.redirect('/');
+        req.flash("success", "Campground was created!");
+        res.redirect('/campgrounds');
       });
     });
   });
