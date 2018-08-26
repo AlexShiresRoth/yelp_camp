@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <img class="card-img-top" src="<%= user.avatar %>" alt="user avatar">
+            <div class="card-body">
+                <h4><%= user.firstName + " " + user.lastName %> </h4>  
+                <div class="card-text mb-2">
+                <a href="mailto:<%= user.email %>"><%= user.email %></a>
+            </div>
+            <a class="btn btn-primary" href="../forgot">Password Reset</a>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-md-8">
+        <h3> <%= user.username %>'s campgrounds: </h3>
+        <% campgrounds.forEach(function(campground){ %>
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="<%=campground.image %>">
+                <div class="card-body">
+                   <a href="/campgrounds/<%=campground.id %>"> <%= campground.name %></a>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+
+
+
+<% include ../partials/footer %>
