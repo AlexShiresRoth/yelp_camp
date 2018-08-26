@@ -23,7 +23,7 @@
     var cloudinary = require('cloudinary');
     cloudinary.config({ 
       cloud_name: 'alexshiresroth', 
-      api_key: 451691636924486,
+      api_key: process.env.CLOUDINARY_API_KEY,
       api_secret: process.env.CLOUDINARY_API_SECRET
     });
  
@@ -32,6 +32,7 @@
        provider: 'google',
        httpAdapter: 'https',
        apiKey: process.env.GEOCODER_API_KEY,
+       apiSecret:process.env.GEOCODER_SECRET,
        formatter: null
    };
    
@@ -75,6 +76,7 @@ router.post("/", middleware.isLoggedIn, upload.single('image'), function (req, r
   // geocoder configuration
     geocoder.geocode(req.body.location, function (err, data) {
      if (err || !data.length) {
+         console.log(err);
        req.flash('error', 'Invalid address');
        return res.redirect('back');
      }

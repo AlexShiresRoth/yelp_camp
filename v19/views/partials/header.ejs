@@ -3,6 +3,7 @@
     <head>
         <title>YelpCamp</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="8_bDn3XZdievN_WH_HD2rwpPLH85ExOP1zDjemwiHAE" />
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/stylesheets/main.css">
     </head>
@@ -30,7 +31,7 @@
                   <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li>
                   <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a></li>
               <% } else { %>
-                  <li><a href="/users/<%= currentUser.id %>">Signed In As <%= currentUser.username %></a></li>
+                  <li><a href="#">Signed In As <%= currentUser.username %></a></li>
                   <li><a href="/logout">Logout</a></li>
               <% } %>
           </ul>
